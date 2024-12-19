@@ -1,0 +1,57 @@
+@use './variables' as variables;
+@use 'sass:color';
+
+.navbar {
+  background-color: variables.$primary-color;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color variables.$transition-speed;
+
+  .navbar-brand {
+    color: variables.$text-color;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color variables.$transition-speed;
+
+    &:hover {
+      color: color.adjust(variables.$text-color, $lightness: 20%);
+    }
+  }
+
+  .navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+
+    li {
+      a {
+        color: variables.$text-color;
+        text-decoration: none;
+        font-size: 1rem;
+        position: relative;
+        transition: all variables.$transition-speed;
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -5px;
+          width: 0;
+          height: 2px;
+          background-color: variables.$text-color;
+          transition: width variables.$transition-speed;
+        }
+
+        &:hover {
+          color: color.adjust(variables.$text-color, $lightness: 20%);
+          transform: scale(1.1);
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
