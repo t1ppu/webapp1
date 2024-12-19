@@ -43,10 +43,10 @@
           background-color: variables.$text-color;
           transition: width variables.$transition-speed;
         }
-
+        
         &:hover {
-          color: color.adjust(variables.$text-color, $lightness: 20%);
-          transform: scale(1.1);
+          color: color.adjust(variables.$hover-color, $lightness: 20%);
+          transform: scale(1.5);
           &::after {
             width: 100%;
           }
