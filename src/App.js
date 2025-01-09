@@ -24,7 +24,7 @@ const Home = () => (
   <div>
   <div>
     <h2>Home</h2>
-    <p>Dont click on the first image</p>
+    <p style={{ fontSize: '20px', fontWeight: 'bold' }}>Dont click on the first image</p>
   </div>
   <Swiper
       modules={[Navigation,Scrollbar, A11y]}
